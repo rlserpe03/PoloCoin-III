@@ -1170,8 +1170,8 @@
             <!-- PROFESSOR: PRÉ-CONSELHO -->
             <section id="visao-pre-conselho-professor" class="oculto">
                 <div class="card">
-                    <h2>📋 Pré-Conselho de Classe (Ocorrências Negativas)</h2>
-                    <p style="margin-bottom: 15px; color: #666;">Visualize somente as ocorrências negativas lançadas por
+                    <h2>📋 Pré-Conselho de Classe (Ocorrências)</h2>
+                    <p style="margin-bottom: 15px; color: #666;">Visualize as ocorrências lançadas por
                         todos os
                         professores no período selecionado e registre observações e destaques pedagógicos para o
                         Pré-Conselho.
@@ -1193,7 +1193,7 @@
                         </div>
                         <button class="btn-acao btn-alerta" style="width: auto; padding: 12px 18px;"
                             onclick="imprimirOcorrenciasTodosAlunos()">
-                            🖨️ Imprimir Ocorrências Negativas da Turma
+                            🖨️ Imprimir Ocorrências da Turma
                         </button>
                     </div>
 
@@ -1202,7 +1202,7 @@
                             <tr>
                                 <th>RA</th>
                                 <th>Aluno</th>
-                                <th>Ocorrências Negativas (Todos os Professores)</th>
+                                <th>Ocorrências (Todos os Professores)</th>
                                 <th>Observação / Destaque de Pré-Conselho</th>
                                 <th>Ação</th>
                             </tr>
@@ -1838,7 +1838,7 @@
                 pendentes.forEach(oc => {
                     container.innerHTML += `
                         <div class="item-ocorrencia item-negativo" style="margin-bottom:12px;">
-                            <div style="font-weight:bold; color:#dc2626;">⚠️ Ocorrência Negativa: ${oc.data || 'N/A'}</div>
+                            <div style="font-weight:bold; color:#dc2626;">⚠️ Ocorrência: ${oc.data || 'N/A'}</div>
                             <div style="margin: 6px 0;">${oc.texto}</div>
                             <div style="font-size:0.8rem; color:#666;">Registrado por: ${oc.autor || 'Professor'}</div>
                             <button class="btn-acao btn-sucesso" style="margin-top:8px; padding:6px 12px; font-size:0.82rem; width:auto;" onclick="darCienciaOcorrencia('${oc.id}')">✍️ Marcar e Dar Ciência</button>
@@ -2345,7 +2345,8 @@
             win.document.write(`
                 <html>
                 <head>
-                    <title>Relatório de Ocorrências Negativas - Turma ${turmaSel}</title>
+                    <title>Relatório de Ocorrências 
+                    - Turma ${turmaSel}</title>
                     <style>
                         body { font-family: Arial, sans-serif; padding: 25px; color: #1e293b; }
                         .header { text-align: center; border-bottom: 2px solid #334155; padding-bottom: 12px; margin-bottom: 20px; }
