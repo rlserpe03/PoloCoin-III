@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- INSTALAR SITE -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6d28d9">
+
     <!-- Importação do Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Importação do SheetJS para ler folhas de cálculo Excel/CSV -->
@@ -3529,6 +3534,17 @@
                 carregarTabelaPedidosAdm();
             }
         }
+
+
+// Registrar Service Worker para ativação do Prompt de Instalação (PWA)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('PWA Service Worker registrado com sucesso!'))
+      .catch(err => console.error('Erro ao registrar Service Worker:', err));
+  });
+}
+
     </script>
 </body>
 
